@@ -1,0 +1,16 @@
+# Python sanal ortam dosyaları
+venv/
+ENV/
+env/
+bin/
+Include/
+Lib/
+Scripts/
+pyvenv.cfg
+
+# PyCharm ayarları
+.idea/
+
+# Derlenmiş dosyalar
+__pycache__/
+*.py[cod]

@@ -25,3 +25,21 @@ class PasswordManager:
         with open(self.file_path, "r") as f:
             data = json.load(f)
         return data.get(site, "Not found")
+
+manager = PasswordManager()
+
+while True:
+    print("\n1. Generate & Save\n2. View Password\n3. Exit")
+    choice = input("Select: ")
+
+    if choice == "1":
+        site = input("Website: ")
+        user = input("Username: ")
+        pwd = manager.generate_password()
+        manager.save_password(site, user, pwd)
+        print(f"Generated for {site}: {pwd}")
+    elif choice == "2":
+        site = input("Website: ")
+        print(manager.get_password(site))
+    elif choice == "3":
+        break

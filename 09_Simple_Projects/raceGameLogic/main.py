@@ -1,6 +1,7 @@
 import random
 import time
 
+
 class Vehicle:
     def __init__(self, driver_name, team, top_speed):
         self.driver_name = driver_name

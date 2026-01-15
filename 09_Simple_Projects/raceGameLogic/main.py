@@ -13,5 +13,17 @@ class Vehicle:
         self.current_speed = min(self.top_speed, self.current_speed + boost)
         self.distance_covered += self.current_speed
 
-    def get_info(self):
-        return f"{self.driver_name} ({self.team}) - Distance: {self.distance_covered} km"
+class Race:
+    def __init__(self, race_name, track_length):
+        self.race_name = race_name
+        self.track_length = track_length
+        self.participants = []
+
+    def add_participant(self, vehicle):
+        self.participants.append(vehicle)
+
+    def check_winner(self):
+        for v in self.participants:
+            if v.distance_covered >= self.track_length:
+                return v
+        return None

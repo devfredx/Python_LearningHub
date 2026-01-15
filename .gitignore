@@ -11,6 +11,7 @@ pyvenv.cfg
 # PyCharm ayarları
 .idea/
 
+
 # Derlenmiş dosyalar
 __pycache__/
 *.py[cod]

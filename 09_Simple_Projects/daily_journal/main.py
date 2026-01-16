@@ -12,4 +12,15 @@ class Journal:
                 "mood": mood
             }
             self.entries.append(entry)
-            print("Entry added successfully!")append(entry)
+            print("Entry added successfully!")
+
+            def save_to_file(self, filename="my_journal.json"):
+                with open(filename, "w") as f:
+                    json.dump(self.entries, f, indent=4)
+
+            def load_from_file(self, filename="my_journal.json"):
+                try:
+                    with open(filename, "r") as f:
+                        self.entries = json.load(f)
+                except FileNotFoundError:
+                    self.entries = []

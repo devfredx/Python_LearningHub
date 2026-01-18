@@ -5,3 +5,8 @@ class BudgetTracker:
     def add_transaction(self, category, amount, trans_type):
         new_trans = {"category": category, "amount": amount, "type": trans_type}
         self.transactions.append(new_trans)
+
+    def get_balance(self):
+        total_income = sum(t['amount'] for t in self.transactions if t['type'] == "Income")
+        total_expense = sum(t['amount'] for t in self.transactions if t['type'] == "Expense")
+        return total_income - total_expense
